@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>PRIMEGENSw3</title>
+<link href="../css/global.css" rel="stylesheet" type="text/css"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<script type="text/javascript">
+function showElement(layer){
+		var myLayer = document.getElementById(layer);
+				myLayer.style.display="block";
+}
+	
+</script>
+
+
+</head>
+<body onload="init();">
+<div id="container">
+      <div id="Logo">
+      	<div id="left-col"><h1>PRIMEGENS-<i>w3</i></h1><span>High-throughput Primer and Probe Design</span></div>
+	   <div id="right-col">
+		<div id="title"><span>Digital Biology Laboratory</span><br/><span>University of Missouri - Columbia</span></div>
+		<div id="imgPlcHolder"><img src="http://primegens.org/images/mu_logo.png"/></div>
+ 	   </div>
+        </div>
+      <div id="main-content">
+            <div id="navigation-panel">
+		<p><a href="http://primegens.org">Home</a> </p>
+		<p><a href="#" class="button" onclick="javascript:showElement('hide')">
+		<span>Algorithm</span>
+		</a></p>
+		<div id="hide">				<ul>
+		<p><li><a href="SSPD.html">SSPD</a></li></p>
+		<p><li><a href="PSPD.html">PSPD</a></li></p>
+		<p><li><a href="FSPD.html">FSPD</a></li></p>
+		<p><li><a href="Binding_check.html">Check Binding Specificity</a></li></p>
+		<p><li><a href="Probe_Design.html">Probe Design Only</a></li></p>
+		</ul></div>
+		<p><a href="Implementation.html">Implementation</a></p>
+		<p><a href="Database_Support.html">Database Support</a></p>
+		<p><a href="References.html">References</a></p>
+		<p><a href="PRIMEGENSw3-User-Manual.pdf">Download User Manual</a></p>
+	     </div>
+             <div id="content">
+		<p><strong>Regular primer design using PRIMEGENS.</strong><br>
+                <p>It integrates Primer3 and BLAST in a pipeline to automate the design of high-quality primers and probes using various efficient algorithms. 
+There are three different algorithms: 1) Sequence-Specific Primer Design
+(SSPD), 2) Fragment-Specific Primer Design (FSPD), and 3) Probe-Specific Primer Design (PSPD). along with probe design capacity, simply called Probes Design algorithm.
+For this, it uses query file having the sequence for which primers/probes
+need to be designed, and the database file having all the sequences that are present in the PCR
+reaction. Sequences in the database files are used to check for any potential cross-hybridization
+and thereby select primer/probes that are specific to the query sequence. The user can upload
+their own customized database file or use available genomes supported by the server. We do not recommend
+user to upload large database like any genome.</p>
+		</div>
+             </div>
+	  </div>
+	  <div id="footer">		
+		  <div class="footer_main">
+				<p>
+					<a href="Copyright.html">Copyright</a> |
+					<a href="Acknowledgement.html">Acknoledgement</a> |
+					<a href="Contact_Us.html">Contact Us</a>  
+				</p>
+		  </div>	
+		  <div class="bottom_center"><i>Designed by Garima Kushwaha, <br> Digital Biology Laboratory, MU Informatics Institute, University of Missouri - Columbia.</i></div>
+		  
+		  </div>
+</div>	
+</body>
+</html>

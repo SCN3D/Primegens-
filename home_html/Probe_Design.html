@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>PRIMEGENSw3</title>
+<link href="../css/global.css" rel="stylesheet" type="text/css"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<script type="text/javascript">
+function showElement(layer){
+		var myLayer = document.getElementById(layer);
+				myLayer.style.display="block";
+}
+	
+</script>
+
+
+</head>
+<body onload="init();">
+<div id="container">
+      <div id="Logo">
+      	<div id="left-col"><h1>PRIMEGENS-<i>w3</i></h1><span>High-throughput Primer and Probe Design</span></div>
+		<div id="right-col">
+			<div id="title"><span>Digital Biology Laboratory</span><br/><span>University of Missouri - Columbia</span></div>
+			<div id="imgPlcHolder"><img src="http://primegens.org/images/mu_logo.png"/></div>
+		</div>
+      </div>
+ 	  <div id="main-content">
+      			<div id="navigation-panel">
+						<p><a href="http://primegens.org/">Home</a> </p>
+		<p><a href="#" class="button" onclick="javascript:showElement('hide')">
+		<span>Algorithm</span>
+		</a></p>
+						<div id="hide">				<ul>
+						<p><li><a href="SSPD.html">SSPD</a></li></p>
+						<p><li><a href="PSPD.html">PSPD</a></li></p>
+						<p><li><a href="FSPD.html">FSPD</a></li></p>
+						<p><li><a href="Binding_check.html">Check Binding Specificity</a></li></p>
+						<p><li><a href="Probe_Design.html">Probe Design Only</a></li></p>
+						</ul></div>
+						<p><a href="Implementation.html">Implementation</a></p>
+						<p><a href="Database_Support.html">Database Support</a></p>
+						<p><a href="References.html">References</a></p>
+						<p><a href="PRIMEGENSw3-User-Manual.pdf">Download User Manual</a></p>
+			      </div>
+			      <div id="content">
+					<strong> Probe Design only.</strong>
+					<p> Probe design algorithm could be used to find sequence-specific probes,
+					which doesn't show any blast hit against database. Such probe design
+					has been used for targeted sequencing like agilent sure-select
+					technology with next-generation sequencing.
+					</p><p>
+					Probe design algorithm uses, sliding window protocol to find fragment
+					of user-given length. Also the algorithm could be used to design
+					multiple probes scattered around query sequence to cover whole region.</p>					
+			      
+					<p>To design gene specific probes, PRIMEGENSv2 uses sliding window protocol to find fragment 
+                                        of user-given length by the PRIMEGENSv2 variable PROBE_LENGTH as the window size. This sliding
+                                        window moves over length of PROBE_PERIOD ('Probe shift' in Figure). It looks for probe in every
+                                        next genomic region given by the PRIMEGENv2 parameter named as PROBE_REGION ('Inter-probe distance'
+                                        in Figure). For probe design, user can also provide their preference of maximum and minimum GC
+                                        content in the probe using PRIMEGENSv2 other variables as MAX_GC and Min_GC and maximum allowable
+                                        BLAST hit for probes.</p>
+				
+                             <div align="center"><img src="http://primegens.org/images/Probe_design_picture.png" alt="Probe Design figure" height="440" width="590"/></div>
+					
+					</div>
+	  </div>
+	  <div id="footer">		
+		  <div class="footer_main">
+				<p>
+					<a href="Copyright.html">Copyright</a> |
+					<a href="Acknowledgement.html">Acknoledgement</a> |
+					<a href="Contact_Us.html">Contact Us</a>  
+				</p>
+		  </div>	
+	 
+		  <div class="bottom_center"><i>Designed by Garima Kushwaha, <br> Digital Biology Laboratory, MU Informatics Institute, University of Missouri - Columbia.</i></div>
+		  </div>
+</div>	
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>PRIMEGENSv2: Primer Design Tool</TITLE>
+<STYLE>
+A {
+	FONT-SIZE: 18px; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #000066; BACKGROUND-COLOR: white; TEXT-DECORATION: none
+}
+A:link {
+	COLOR: #000066
+}
+A:visited {
+	COLOR: #000066
+}
+BODY {
+	COLOR: #000066; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+TD {
+	COLOR: #000066; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+TH {
+	COLOR: #000066; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+BODY {
+	MARGIN: 20px 100px 100px 0px; BACKGROUND-COLOR: #ffffff
+}
+.style5 {
+	FONT-SIZE: 14px; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.style6 {
+	FONT-SIZE: 14px
+}
+.style7 {
+	FONT-SIZE: 16px
+}
+.style8 {
+	FONT-WEIGHT: bold; FONT-SIZE: 18px
+}
+.style9 {
+	FONT-SIZE: 18px
+}
+</STYLE>
+
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2900.2802" name=GENERATOR></HEAD>
+<BODY aLink=red>
+<P> </P>
+<TABLE borderColor=#ffffff borderColorDark=#3333cc width=767 align=center 
+bgColor=#ffffff borderColorLight=#336699 border=1>
+  <TBODY>
+  <TR>
+    <TD colSpan=2 height=146>
+    <P><IMG height=160 src="../Images/Front.JPG" width=774 
+  border=0></P></TD></TR>
+  <TR>
+    <TD vAlign=top align=middle width=131 height=579>
+      <P>&nbsp;</P>
+      <P class="style8 style9" style="MARGIN-LEFT: 15px" align=justify><A 
+      href="introduction.html"><u>Introduction</u></A></P>
+      <P class=style8 style="MARGIN-LEFT: 15px" align=left><STRONG><A 
+      href="installation.html"><u>Installation</u></A></STRONG></P>
+      <P class=style8 style="MARGIN-LEFT: 15px" align=left><STRONG><A 
+      href="execution.html"><u>Execution</u></A></STRONG></P>
+      <P class=style8 style="MARGIN-LEFT: 15px" align=left><STRONG><A 
+      href="references.html"><u>References</u></A></STRONG></P>
+      <H5 class=style8 style="MARGIN-LEFT: 15px" align=left><STRONG><A 
+      href="faqs.html"><u>FAQs</u></A></STRONG></H5>
+      <P class=style8 style="MARGIN-LEFT: 15px" align=left><a href="../index.html"><u>Home</u></a></P>
+      <P><A 
+      href="faqs.html"></A></P>
+      <P><A 
+      href="history.html"></A></P>
+      <P>&nbsp;</P></TD>
+    <TD vAlign=top borderColor=#000066 align=middle width=637 bgColor=#ffffff 
+    height=579>
+      <P>&nbsp;</P>
+      <UL>
+        <H3 class="style5 style7" align=justify>What is PRIMEGENS ? </H3><U1>
+        <P class=style5 style="MARGIN-RIGHT: 46px" align=justify><FONT 
+        face=Arial><SPAN class=style6>PRIMEGENS (<STRONG>PRIME</STRONG>r Design 
+        Using <STRONG>GEN</STRONG> Specific Fragments) is a computer program to 
+        select gene-specific fragments and then design primer pairs for PCR 
+        amplifications.</SPAN></FONT></P></U1><SPAN 
+class=style6><U1></U1></SPAN>
+        <P class=style6 style="MARGIN-RIGHT: 46px" align=justify><FONT 
+        face=Arial>Various genome-scale sequencing projects have generated vast 
+        amount of sequence data. High-throughput data analysis and its study is 
+        one of the primary focuses for molecular biologist. Microarray is one of 
+        the most common tools for studying gene expression on a large scale. In 
+        cDNA microarray, typically each spot on the array contains sequence 
+        segment of a specific gene, which is amplified by PCR. The segment is 
+        expected to be gene-specifc to avoid cross hybridization among genes 
+        sharing significant sequence identity. In another case, researchers may 
+        simply want to amplify gene-specific segments for a selected group of 
+        genes using RT-PCR. In both cases, the problem can be formulated to 
+        choose a gene-specific segment for a gene in a genome and then design 
+        PCR primers according to some specifications. Such an objective is often 
+        achieved manually. For example, a user can apply Primer3 for primer 
+        design for a given sequence. Primer3 designs many possible primers pair 
+        for a given sequence but it does not guarantee their uniqueness in the 
+        whole genome. Therefore, a user has to manually run BLAST for each PCR 
+        product against the genome to search to avoid cross hybridization. The 
+        manual approach cannot be applied to a large scale. PRIMEGENS does not 
+        only automates such a process but also automates the primer generation 
+        on the large scale. Furthermore, PRIMEGENS has a rigorous formulation, 
+        which has a much better chance to find gene specific segment than a 
+        manuall process. </FONT></P>
+        <P></P>
+        <H3 class="style5 style7" align=justify>Authors and References </H3><U1>
+        <P class=style5 style="MARGIN-RIGHT: 46px" align=justify><FONT 
+        face=Arial><SPAN class=style6>PRIMEGENS 1.0 was written by Dong Xu. The 
+        updates in the version 2.0, including the graphical user interface, were 
+        developed Gyan Prakash Srivastava. If you use PRIMEGENS in any 
+        publication, please refer to: </SPAN></FONT></P></U1><U1>
+        <P class=style5 style="MARGIN-RIGHT: 46px" align=justify><FONT 
+        face=Arial><SPAN class=style6>Dong Xu, Guangshan Li, Liyou Wu, Jizhong 
+        Zhou and Ying Xu. PRIMEGENS: A Computer Program for Robust and Efficient 
+        Design of Gene-Specific Probes for Microarray Analysis. Bioinformatics. 
+        18: 1432 - 1437. 2002. </SPAN></FONT></P></U1>
+        <P></P>
+        <H3 class="style5 style7" align=justify>Bug Reports </H3><U1>
+        <P class=style5 style="MARGIN-RIGHT: 46px" align=justify><FONT 
+        face=Arial><SPAN class=style6>Please email any bugs of the program to <A 
+        href="mailto:gps8b9@mizzou.edu"><u>Gyan Prakash Srivastava.</u></A> 
+        </SPAN></FONT></P></U1>
+        <P></P>
+        <H3 class="style5 style7" align=justify>Copyright / Availability 
+        </H3><U1>
+        <P class=style5 style="MARGIN-RIGHT: 46px" align=justify><FONT 
+        face=Arial><SPAN class=style6>The program PRIMEGENS 2.0 is developed and 
+        distributed by Digital Biology Laboratory, University of Missouri, 
+        Columbia. PRIMEGENS executables are free of charge to any users. Source 
+        code of PRIMEGENS may be available under research agreement (please 
+        contact <A href="mailto:xudong@missouri.edu"><u>Dong Xu</u></A>). Suggestions 
+        for development of new features are welcome. </SPAN></FONT></P>
+        </U1><U1>
+        <P class=style5 style="MARGIN-RIGHT: 46px" align=justify><FONT 
+        face=Arial><SPAN class=style6>PRIMEGENS incorporates two third-party 
+        programs in the public domain, i.e., <EM>Primer3</EM> developed by the 
+        Whitehead Institute for Biomedical Research and <EM>BLAST</EM> developed 
+        by National Center for Biotechnology Information 
+        (NCBI).</SPAN></FONT></P></U1><U1>
+        <P class=style5 style="MARGIN-RIGHT: 46px" align=justify><FONT 
+        face=Arial><SPAN class=style6>The authors of PRIMEGENS make no 
+        representations about the suitability of the software for any purpose. 
+        It is provided "as is" without express or implied warranty. The authors 
+        shall not be liable for any damages suffered by Licensee from the use of 
+        this software. </SPAN></FONT></P></U1>
+        <P></P>
+        <H3 class="style5 style7" align=justify>Acknowledgment </H3><U1>
+        <P class=style5 style="MARGIN-RIGHT: 46px" align=justify><FONT 
+        face=Arial><SPAN class=style6>The development of PRIMEGENS was sponsored 
+        by the Office of Biological and Environmental Research, U.S. Department 
+        of Energy, under Contract DE-AC05-00OR22725, managed by UT-Battelle, 
+        LLC. Dong Xu, Gary Li, Liyou Wu, Jizhong Zhou, and Ying Xu at Oak Ridge 
+        National Laboratory are involved in this project. We would like to thank 
+        our colleagues Manesh Shah, Joel A. Klappenbach, and Julia Stair for 
+        their help and insightful comments. </SPAN></FONT></P></U1>
+        <P></P></UL></TD></TR></TBODY></TABLE>
+<TABLE borderColor=white borderColorDark=white width=807 align=center 
+borderColorLight=white border=0>
+  <TBODY>
+  <TR>
+    <TD width=119 height=80 rowSpan=2>
+      <P>&nbsp;<A href="http://www.missouri.edu/"><IMG height=30 src="../Images/mu.gif" width=26 
+      border=0></A> </P></TD>
+    <TD style="TEXT-ALIGN: center" width=541 height=57>
+      <P style="MARGIN-LEFT: 61px; MARGIN-RIGHT: 59px"><FONT face=Arial 
+      color=#666666><SPAN style="FONT-SIZE: 10pt">Designed by Gyan Prakash 
+      Srivastava, Digital Biology Laboratory, Computer Science Department, 
+      University of Missouri - Columbia</SPAN><SPAN style="FONT-SIZE: 10pt"> 
+      USA</SPAN></FONT></P></TD>
+    <TD width=125 height=80 rowSpan=2>
+      <P><A href="http://lifesciences.missouri.edu/"><IMG height=30 src="../Images/lsc.gif" 
+      width=125 border=0></A></P></TD></TR>
+  <TR>
+    <TD style="TEXT-ALIGN: center" width=541 
+height=11>&nbsp;</TD></TR></TBODY></TABLE>
+<P>&nbsp;</P></BODY></HTML>

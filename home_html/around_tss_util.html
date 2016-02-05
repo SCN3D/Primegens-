@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>PRIMEGENSw3</title>
+
+<link href="../css/global.css" rel="stylesheet" type="text/css"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript">
+function showElement(layer){
+        var myLayer = document.getElementById(layer);
+                myLayer.style.display="block";
+}
+</script>
+</head>
+<body onload="init();">
+<div id="container">
+      <div id="Logo">
+        <div id="left-col"><h1>PRIMEGENS-<i>w3</i></h1><span>High-throughput Primer and Probe Design</span></div>
+                <div id="right-col">
+                        <div id="title"><span>Digital Biology Laboratory</span><br/><span>University of Missouri - Columbia</span></div>
+                        <div id="imgPlcHolder"><img src="http://primegens.org/images/mu_logo.png"/></div>
+                </div>
+      </div>
+          <div id="main-content">
+                        <div id="navigation-panel">
+                                               <p><a href="http://primegens.org/">Home</a> </p>
+                                               <p><a href="#" class="button" onclick="javascript:showElement('hide')">
+                                               <span>Algorithm</span>
+                                               </a></p>
+                                               <div id=hide><ul>
+                                                <p><li><a href="SSPD.html">SSPD</a></li></p>
+                                                <p><li><a href="PSPD.html">PSPD</a></li></p>
+                                                <p><li><a href="FSPD.html">FSPD</a></li></p>
+                                                <p><li><a href="Binding_check.html">Check Binding Specificity</a></li></p>
+                                                <p><li><a href="Probe_Design.html">Probe Design Only</a></li></p>
+                                                </ul></div>
+                                                 <p><a href="Implementation.html">Implementation</a></p>
+                                                <p><a href="Database_Support.html">Database Support</a></p>
+                                                <p><a href="References.html">References</a></p>
+                                                <p><a href="PRIMEGENSw3-User-Manual.pdf">Download User Manual</a></p>
+                              </div>
+
+			      <div id="content">
+                                  <p><strong>Primer Design around TSS of a gene.</strong><br/></p>
+                                  <p>For covering specific region around the TSS of any gene, the user is only required to provide gene
+                                  symbols for which the primer design is required. PRIMEGENS-v2 is capable of extracting their respective
+                                  TSSs from the UCSC Genome Database (currently for March 2006 assembly). Users can also provide
+                                  directions from the TSS or region of interest for primer design. Based on this information, PRIMEGENS-v2
+                                  will extract the final query sequence to be used for the ultimate primer design. Query sequence is chosen in
+                                  such a manner that it covers the TSS and the region in either side. Regions around the TSS can be defined
+                                  out of three options for the primer design, including First Exon Coverage, Across TSS, and Promoter
+                                  Coverage. The length of the query sequence to be used for the primer design is determined by another
+                                  PRIMEGENS-v2 variable, i.e., QLENGTH. Another important PRIMEGENS-v2 variable is MINCOVER,
+                                  which determines the extension of the query sequence in the direction opposite to the side of the coverage
+                                  preference. It tries to cover either the whole or partial exon/promoter region within the region of QLENGTH.
+                                  If the sum of the first exon length and MINCOVER is smaller than the QLENGTH, then the QLENGTH is
+                                  changed to cover just the exon-1; thus avoiding extending the query sequence for the primer design into next
+                                  intronic sequence. On the other hand, if the QLENGTH is smaller than the total of the MINCOVER region
+                                  and the first exonic region, i.e., QLENGTH is unable to cover the whole exon-1, and then PRIMEGENSv2
+                                  considers the partial coverage of exon-1. Figure 9 illustrates this feature of PRIMEGENS-v2 to design
+                                  primers around the TSS of candidate genes based on users selections.	
+
+                                  <div align="center"><img src="http://primegens.org/images/TSS--tool1.png" alt="tss-tool figure" height="68%" width="74%"/></div>
+                                  <p align="center">Coverage of the desired region around the TSS in different cases</p>
+
+
+                            </div>
+	  </div>
+	  <div id="footer">		
+		  <div class="footer_main">
+				<p>
+					<a href="Copyright.html">Copyright</a> |
+					<a href="Acknowledgement.html">Acknoledgement</a> |
+					<a href="Contact%20Us.html">Contact Us</a>  
+				</p>
+		  </div>	
+
+    <div class="bottom_center"><i>Designed by Garima Kushwaha, <br> Digital Biology Laboratory, MU Informatics Institute, University of Missouri - Columbia.</i></div>
+</div>
+</div>	
+</body>
+</html>

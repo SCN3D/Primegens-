@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>PRIMEGENSw3</title>
+<link href="../css/global.css" rel="stylesheet" type="text/css"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<script type="text/javascript">
+function showElement(layer){
+		var myLayer = document.getElementById(layer);
+				myLayer.style.display="block";
+}
+	
+</script>
+
+
+</head>
+<body onload="init();">
+<div id="container">
+      <div id="Logo">
+      	<div id="left-col"><h1>PRIMEGENS-<i>w3</i></h1><span>High-throughput Primer and Probe Design</span></div>
+	   <div id="right-col">
+		<div id="title"><span>Digital Biology Laboratory</span><br/><span>University of Missouri - Columbia</span></div>
+		<div id="imgPlcHolder"><img src="http://primegens.org/images/mu_logo.png"/></div>
+ 	   </div>
+        </div>
+      <div id="main-content">
+            <div id="navigation-panel">
+		<p><a href="http://primegens.org">Home</a> </p>
+		<p><a href="#" class="button" onclick="javascript:showElement('hide')">
+		<span>Algorithm</span>
+		</a></p>
+		<div id="hide">				<ul>
+		<p><li><a href="SSPD.html">SSPD</a></li></p>
+		<p><li><a href="PSPD.html">PSPD</a></li></p>
+		<p><li><a href="FSPD.html">FSPD</a></li></p>
+		<p><li><a href="Binding_check.html">Check Binding Specificity</a></li></p>
+		<p><li><a href="Probe_Design.html">Probe Design Only</a></li></p>
+		</ul></div>
+		<p><a href="Implementation.html">Implementation</a></p>
+		<p><a href="Database_Support.html">Database Support</a></p>
+		<p><a href="References.html">References</a></p>
+		<p><a href="PRIMEGENSw3-User-Manual.pdf">Download User Manual</a></p>
+	     </div>
+             <div id="content">
+		<p><strong>SSPD - Sequence Specific Primer Design</strong><br>
+		This algorithm is used to design primers for each of the specific sequences given by the user in the query input file against anyalternate potential hybridization with any of the sequences given in the database input file.</p>
+		 <p>In its first step, SSPD design different primers for the query sequence using a third-party program, i.e. Primer3. It uses the stand alone executable of Primer3 to design 100s of primer pairs scattered all over the input query sequence by Primer3 and then retain only unique ones from this set. This step help in optimizing its nnput query sequence. It further selects only few specific primers from the resulting multiple set of primers due to the fact that complete binding between primers and template is not required at the 5'-end and stringency is more critical at 3'-end than at 5'-end of the primer. Based on this criterion, it first selects 15mer oligonucleotides from 3'-end of each primer designed by Primer3 and then retain only unique ones from this set. This step help in optimizing its next step and make PRIMEGENS run faster. </p>
+		<p> Second step of SSPD is to perform gapless alignments of the unique primers with all	the sequences in database file to find all the potential non-specific PCR-products. For this, it uses Megablast for alignment and is optimized for detection of genomic regions which are highly similar to query oligo (15mer) in the database sequences provided. Finally in the end, it selects primers that have single or minimum cross hybridizations possible and give those primers as output.</p>
+		<div align="center"><img src="http://primegens.org/images/SSPD.png" alt="Figure-1" height="450" width="340"/>
+		<p>Above figure shows the flowchart for SSPD algorithm.</p>
+		</div>
+             </div>
+	  </div>
+	  <div id="footer">		
+		  <div class="footer_main">
+				<p>
+					<a href="Copyright.html">Copyright</a> |
+					<a href="Acknowledgement.html">Acknoledgement</a> |
+					<a href="Contact_Us.html">Contact Us</a>  
+				</p>
+		  </div>	
+		  <div class="bottom_center"><i>Designed by Garima Kushwaha, <br> Digital Biology Laboratory, MU Informatics Institute, University of Missouri - Columbia.</i></div>
+		  
+		  </div>
+</div>	
+</body>
+</html>

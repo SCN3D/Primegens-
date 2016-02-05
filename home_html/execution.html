@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>PRIMEGENS-<i>w3</i></title>
+<link href="http://primegens.org/w3/css/global.css" rel="stylesheet" type="text/css"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+ <script type="text/javascript">
+    function showElement(layer){
+	   var myLayer = document.getElementById(layer);
+       if (myLayer.style.display=="block"){
+           myLayer.style.display="none";}
+	   else{
+           myLayer.style.display="block";}
+   }
+</script>
+
+</head>
+<body onload="init();">
+<div id="container">
+      <div id="Logo">
+      	<div id="left-col"><h1>PRIMEGENS</h1><span>High-throughput Primer and Probe Design</span></div>
+		<div id="right-col">
+			<div id="title"><span>Digital Biology Laboratory</span><br/><span>University of Missouri - Columbia</span></div>
+			<div id="imgPlcHolder"><img src="http://primegens.org/images/mu_logo.png"/></div>
+		</div>
+      </div>
+ 	  <div id="main-content">
+      			<div id="navigation-panel">
+
+						<p><a href="http://primegens.org">Home</a> </p>
+				    	<p><a href="#" class="button" onclick="javascript:showElement('hide')">
+					    <span>Algorithm</span>
+					    </a></p>
+					    <div id="hide"><ul>
+						     <p><a href="SSPD.html">SSPD</a></p>
+						     <p><a href="PSPD.html">PSPD</a></p>
+						     <p><a href="FSPD.html">FSPD</a></p>
+		         			 <p><li><a href="Binding_check.html">Check Binding Specificity</a></li></p>
+		                <p><li><a href="Probe_Design.html">Probe Design Only</a></li></p>
+					    </ul></div>
+						<p><a href="Implementation.html">Implementation</a></p>
+				    	<p><a href="References.html">References</a></p>
+			    
+                          <p><a href="download.html">Download</a></p>
+					      <p><a href="installation.html">Installation</a></p>
+						  <p><a href="execution.html">Execution</a></p>
+				          <p><a href="faqs.html">FAQS</a></p>          
+						
+				</div>
+			      <div id="content">
+			      
+				   <UL>
+				     <H3 align=justify>General Guidance </H3>
+				     <U1>
+				     <P align=justify><FONT face=Arial><SPAN>PRIMEGENS can run from Unix/Linux shell or windows as a stand-alone package. It has been tested extensively on Sun, DEC, and Linux PC. Running PRIMEGENS from a Unix shell(rather than from the Web interface) provides a convenient way to handle multiple data sets and multiple runs automatically by using scripts. All the options for the program can be specified through flags on the command line. Multiple flags without conflicts can be used at the same time, and their orders in the command line do not matter.  </SPAN></FONT></P>	 
+					 </U1>
+				     
+				     <H3 align=justify>Default Run</H3>
+					 <U1>
+				     <p class=style5 style="MARGIN-RIGHT: 46px" align=justify><FONT face=Arial><SPAN class=style6>To run primegens, you need a file (say "database") which records all the known ORFs for the genome in the <a href="fasta.html"><u>FASTA</u></a> format.   You can simply run the program using default parameters: </SPAN></FONT></p>
+					 <p class=style5 style="MARGIN-RIGHT: 46px" align=justify>primegens database &gt; log </p>
+					</U1>
+					
+					<H3 align=left>Output files</H3>
+					<li>
+					<div align="left"><span> Log file ("log") which gives sequence alignments;</span></div>
+                    </li>
+                  </UL>
+				  
+		          <div align="left">
+			        
+					<UL>
+    	            <li> Unique sequence files:</li>
+			        </UL>
+					
+				    <ol>
+			        <li>database.nohit (unique by itself)          </li>
+				    <li>database.seg   (unique portion in the sequence)    </li>
+			        <li>database.sim   (redundant sequences in the database)  </li>
+			        </ol>
+				  
+				   <UL>
+				   <li><strong><span> Primer information for each group:</span> </strong></li>
+				   </UL>
+				   
+				   <ol>
+				   <li>database.nohit.primer (unique by itself)        </li>
+				   <li>database.seg.primer   (unique portion in the sequence)     </li>
+				   <li>database.sim.primer   (redundant sequences in the database) </li>
+				   </ol>
+				   
+				   <UL>
+				   <li><span> Input for Excel spread sheet (separated by tab):</span></li>
+				   </UL>
+					
+				   <ol>
+				   <li>database_primer.xls  </li>
+				   <li>database_primer_undo.xls</li>
+				   </ol>
+					
+				</div>
+			    	
+				<UL>
+			        <H3 align=left></H3>
+				   <U1>
+				    <p style="MARGIN-RIGHT: 46px" align=justify>The columns represent: plate number, row number, column number, ORF name, gene function, forward primer, starting position of forward primer, ending position of forward primer, melting temperature of forward primer, reverse primer, starting position of reverse primer, ending position of reverse primer, melting temperature of reverse primer, expected length  (the length between forward primer and reverse primer), length  of the gene, and length of the unique segment, respectively</p>
+					
+				  <div align="left"><span style="font-weight: bold"></span></div>
+				  </U1>
+				  
+				  <li>
+				  <div align="left"><span>The primer files with each having 96 primers:</span> </div>
+				  </li>
+	           </UL>
+			
+			   <div align="left">
+		         <ol>
+				 <li>   primer_plate_left1  primer_plate_left2 ...      </li>
+	             <li class="style6">primer_plate_right1  primer_plate_right2 ... </li>
+				 </ol>
+		      </div>
+		
+			  <UL>
+			      <U1><p align="left"><strong>Command Line Options</strong></p>  </U1>
+				  <U1>
+				    <div align="left">* Calculate primers on a subset of ORFs (genes) in &quot;database&quot;. </div>
+			        <p align="left"><strong>primegens -l subset database</strong><br>
+					   (if the file &quot;subset&quot; is in a list format, with each ORF in a line).<br>
+			        </p>
+		            <p align="left"><strong>primegens -lf subset database</strong><br> (if the file &quot;subset&quot; is in FASTA format).</p>
+				    <div align="left">
+				       <div align="left">* If ORFs in &quot;database&quot; has no functions defined, one can use a separate function file <br> (e.g., &quot;function&quot;) in a format: </div>
+				    </div>
+			
+					<p align="left" class="style6">ORF1 function a<br>
+			       ORF2 function b<br>...</p>
+			       <p align="left"> Then run</p>
+				   <p align="left"> primegens -name function -l subset database</p>			
+                   <div align="left">* Keep the BLAST outputs in the temporary directory (default: no):</div>
+                   <p align="left"><strong> primegens -bf database</strong></p>
+                   <div align="left">* Define the maximum expectation value (default: 1e-15) to get a BLAST alignment, e.g.,</div>
+	               <p align="left"> primegens -e 1e-20 database</p>
+	               <div align="left">* Define the minimum length (default: 100 bases) to select a unique segment, e.g.,</div>
+	               <p align="left"> primegens -mseg 80 database</p>
+                   <div align="left">* Define the maximum sequence similarity (default: 75%) between the select segment <br>and any other sequence, e.g.,</div>
+     	           <p align="left"> primegens -msim 0.80 database</p>
+               	   <div align="left">* Define the minimum length (default: 50 bases) to filter out a BLAST alignment as <br>a potential primer, e.g.,</div>
+                   <p align="left"> primegens -mfil 30 database</p>
+                   <div align="left">* Define the faction (default: 0.8) of the length as the lower limit in the <br>&quot;PRIMER_PRODUCT_SIZE_RANGE&quot; parameter for Primer3, e.g., </div>		
+	               <p align="left"> primegens -f 0.6 database</p>
+                   <div align="left">* Calculate the unique sequences only without designing primers using Primer3:</div>
+                   <p align="left"> primegens -np database</p>													
+                   <div align="left">* Define the maximum length (-maxsep, default: 10000 bases) or the minimun length <br>
+                   (-minsep, default: 0) for the primer pruduct, e.g.,           </div>
+                   <p align="left"> primegens -maxsep 1200 -minsep 100 database</p>								
+             	</U1>																												
+				
+		        <U1><p style="MARGIN-RIGHT: 46px" align=justify><FONT face=Arial><SPAN class=style6>You can combine several options together. The order of options does not matter as long as the "database" file is at the end of the argument for primegens. You can go to the "test" directory of the package and do a  test run:</SPAN></FONT></p>
+	           </U1>
+			   <U1>
+			   <p align="justify">primegens -msim 0.80 -name protein.list -l list ORFDNA &gt; log </p>		
+               </U1>			
+			   
+               <p align=justify>&nbsp;</p>															
+	           <p align=justify class="style7 style5"><strong>Editing the Conditions for Primers </strong></p>						
+			   
+               <U1>																										
+                 <p class=style5 style="MARGIN-RIGHT: 46px" align=justify><FONT face=Arial><SPAN class=style6>If you like to change the conditions for generating primers, you also need copy the file  "append" in the primegens directory (e.g., /usr/local/primegens/) to the directory you want to run the program, and modify the parameters in "append" accordingly. Otherwise the default parameters apply.</SPAN></FONT></p>						
+            	 <p class=style5 style="MARGIN-RIGHT: 46px" align=left>&nbsp;</p>
+         	  </U1>																												
+		</div>
+	  </div>
+	  <div id="footer">		
+		  <div class="footer_main">
+				<p>
+					<a href="http://primegens.org/home_html/Copyright.html">Copyright</a> |
+					<a href="http://primegens.org/home_html/Acknowledgement.html">Acknoledgement</a> |
+					<a href="http://primegens.org/home_html/Contact%20Us.html">Contact Us</a>  
+				</p>
+		  </div>	
+
+		  <div class="bottom_center"><i>Designed by Garima Kushwaha, <br> Digital Biology Laboratory, MU Informatics Institute, University of Missouri - Columbia.</i></div>
+		  
+		  </div>
+</div>	
+</body>
+</html>

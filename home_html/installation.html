@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>PRIMEGENS</title>
+<link href="http://primegens.org/w3/css/global.css" rel="stylesheet" type="text/css"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+ <script type="text/javascript">
+    function showElement(layer){
+      var myLayer = document.getElementById(layer);
+      if (myLayer.style.display=="block"){
+          myLayer.style.display="none";}
+      else{
+          myLayer.style.display="block";}
+	}
+</script>
+
+
+</head>
+<body onload="init();">
+<div id="container">
+      <div id="Logo">
+      	<div id="left-col"><h1>PRIMEGENS</h1><span>High-throughput Primer and Probe Design</span></div>
+		<div id="right-col">
+			<div id="title"><span>Digital Biology Laboratory</span><br/><span>University of Missouri - Columbia</span></div>
+			<div id="imgPlcHolder"><img src="http://primegens.org/images/mu_logo.png"/></div>
+		</div>
+      </div>
+ 	  <div id="main-content">
+      			<div id="navigation-panel">
+		    		<p><a href="http://primegens.org/">Home</a> </p>
+                    <p><a href="#" class="button" onclick="javascript:showElement('hide')">
+                    <span>Algorithm</span>
+	                </a></p>
+		            <div id="hide"><ul>
+						<p><a href="http://primegens.org/home_html/SSPD.html">SSPD</a></p>
+						<p><a href="http://primegens.org/home_html/PSPD.html">PSPD</a></p>
+						<p><a href="http://primegens.org/home_html/FSPD.html">FSPD</a></p>
+			        	<p><li><a href="http://primegens.org/home_html/Binding_check.html">Check Binding Specificity</a></li></p>
+				        <p><li><a href="http://primegens.org/home_html/Probe_Design.html">Probe Design Only</a></li></p>
+				    </ul></div>
+		    		<p><a href="http://primegens.org/home_html/Implementation.html">Implementation</a></p>
+					<p><a href="http://primegens.org/home_html/References.html">References</a></p>
+			      
+						
+					<p><a href="download.html">Download</a></p> 
+					<p><a href="installation.html">Installation</a></p> 
+					<p><a href="execution.html">Execution</a></p>
+				    <p><a href="faqs.html">FAQS</a></p>
+							
+						</div>
+			      <div id="content">
+				
+				 <H3>Installation Guide</H3><U1>
+		         <p align="left"><strong>Windows 2000/XP</strong></p>
+		         <p align="left"><FONT  face=Arial>1) Download <strong>PRIMEGENS.zip</strong> file and save it on your PC at any location of your interest.</FONT></p>
+				<p align="left"><span>2) </span><FONT face=Arial><span>Few things are very essential to be fixed properly.</span></FONT></p>
+				  <div align="left">
+			       <ul>
+				   <li><FONT face=Arial>Go to CONTROL PANEL of the computer by clicking START menu. </FONT></li>
+				   <li><FONT face=Arial>Double click on SYSTEM icon, a new window SYSTEM PROPERTIES is open</FONT></li>
+				   <li><FONT face=Arial>Click on ADVANCED tab located on the top in system properties window</FONT></li>
+				   <li><FONT face=Arial>Click on ENVIRONMENT VARIABLES located on the bottom in advanced tab</FONT></li>
+			       <li><FONT face=Arial>Click NEW to add new environment variable under SYSYEM VARIABLES title</FONT></li>
+				   <li><FONT face=Arial>Type<span><em> &quot;FINDSEG_PATH&quot;</em> in variable name field and location of main PRIMEGENS directory (including itself) in variable value field for example type &quot;C:\software\PRIMEGENS\&quot;</span> as variable value if the PRIMEGENS directory is located in &quot;C:\software&quot; path.</FONT><br>
+				   &nbsp;<br></li>
+			        </ul>
+			       </div>
+		       
+		        <p align="left"><strong>IMPORTANT!</strong><br>
+			    <FONT face=Arial><span>Few things are very essential to be fixed properly.</span></FONT></p>
+                <div align="left">
+	            <ul>
+		        <li><FONT face=Arial><span>Spaced are not allowed for the FINDSEG_PATH value. Thereforebe careful about location of PRIMEGENS directory. (c:\PRIMEGENS is good option)</span></FONT></li>
+		        <li><FONT face=Arial><span>The FINEDSEG_PATH value should be such that README.txt should be located in that path. By default WinZip wizard will create new directory with same name PRIMEGENS. In that case you will see READEME.txt file in &lt;PRIMGENS.zip directory&gt;\PRIMEGENS \PRIMEGENS.</span></FONT></li>
+	            <li><FONT face=Arial><span>After setting environment variable, please open a new MS command prompt in order to get the FINDSEG_PATH variavle activated</span></FONT></li>
+	          </ul>
+	      	  </div>
+       
+	     	 <p align="left">&nbsp;&nbsp;&nbsp;&nbsp;3) <FONT face=Arial><span>For successful testing of PRIMEGENS,</span></FONT></p>
+		     <div align="left">
+			 <ul>
+	<li><FONT face=Arial>Open an command prompt on your computer</FONT></li>
+	<li><FONT face=Arial>Go to TEST directory inside the PRIMEGENS directory</FONT></li>
+	<li><FONT face=Arial>Type &quot;..\bin\PRIMEGENS.exe -lf subset.txt database.txt&quot;</FONT></li>
+    <li><FONT face=Arial>Once successfully executed type &quot;..\bin\PRIMEGENS.exe database.txt&quot;. if the displayshows &quot;Job Finished Successfully!&quot; means the program is ready to use.</FONT></li>
+		          </ul>
+			      </div>
+			       </U1>
+				 <H3 align=left>Running Instruction </H3>
+	             <U1>
+	            <P align=left><FONT face=Arial><SPAN>Before running PRIMEGENS, select a location where you want to store all PRIMEGENS output file. Copy your databse in that location also copy subset file and append.txt file according to your option.</SPAN></FONT></P>
+		       </U1>
+				  </div>
+	  </div>
+	  <div id="footer">		
+		  <div class="footer_main">
+				<p>
+					<a href="Copyright.html">Copyright</a> |
+					<a href="Acknowledgement.html">Acknoledgement</a> |
+					<a href="Contact_Us.html">Contact Us</a>  
+				</p>
+		  </div>	
+	 
+		  <div class="bottom_center"><i>Designed by Garima Kushwaha, <br> Digital Biology Laboratory, MU Informatics Institute, University of Missouri - Columbia.</i></div>
+		  
+		  </div>
+</div>	
+</body>
+</html>

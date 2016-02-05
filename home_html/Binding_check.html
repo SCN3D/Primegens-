@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>PRIMEGENSw3</title>
+<link href="../css/global.css" rel="stylesheet" type="text/css"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<script type="text/javascript">
+function showElement(layer){
+		var myLayer = document.getElementById(layer);
+				myLayer.style.display="block";
+}
+	
+</script>
+
+
+</head>
+<body onload="init();">
+<div id="container">
+      <div id="Logo">
+      	<div id="left-col"><h1>PRIMEGENS-<i>w3</i></h1><span>High-throughput Primer and Probe Design</span></div>
+		<div id="right-col">
+			<div id="title"><span>Digital Biology Laboratory</span><br/><span>University of Missouri - Columbia</span></div>
+			<div id="imgPlcHolder"><img src="http://primegens.org/images/mu_logo.png"/></div>
+		</div>
+      </div>
+ 	  <div id="main-content">
+      			<div id="navigation-panel">
+						<p><a href="http://primegens.org/">Home</a> </p>
+		<p><a href="#" class="button" onclick="javascript:showElement('hide')">
+		<span>Algorithm</span>
+		</a></p>
+						<div id="hide">				<ul>
+						<p><li><a href="SSPD.html">SSPD</a></li></p>
+						<p><li><a href="PSPD.html">PSPD</a></li></p>
+						<p><li><a href="FSPD.html">FSPD</a></li></p>
+						<p><li><a href="Binding_check.html">Check Binding Specificity</a></li></p>
+						<p><li><a href="Probe_Design.html">Probe Design Only</a></li></p>
+						</ul></div>
+						<p><a href="Implementation.html">Implementation</a></p>
+						<p><a href="Database_Support.html">Database Support</a></p>
+						<p><a href="References.html">References</a></p>
+						<p><a href="PRIMEGENSw3-User-Manual.pdf">Download User Manual</a></p>
+			      </div>
+			      <div id="content">
+					<strong> Check for Binding Specificity</strong>
+					<p> Once
+					primer pair design using any of the PRIMEGENS algorithm (SSPD,FSPD and PSPD) is accomplished, the model checks for potential
+					amplicons amplified by each primer pair across whole genome. The chance
+					that a primer pair will amplify another region in addition to the
+					target region is relatively low because only a certain order and
+					orientation of primer binding can result in an amplicon. In addition,
+					even if the primer pair binds in correct order and orientation, the
+					amplicon size should fall within the designed size criterion. For
+					example, a primer pair which shows cross-hybridization with
+					amplification size of more than 10,000 bases other than target region
+					can be safely assumed to be specific to the target region. Figure below
+					shows an example of primer oligo blast hit, which results in successful
+					or failed amplification in PCR. As shown, out of 4 different cases of
+					primer pair hits, only one case results in successful amplification.
+					Further, it occurs only if the amplicon size is less than maximum
+					possible amplicon size for RT-PCR. In current model, we use 10,000
+					bases as cutoff to avoid false negatives during computations.</p>
+                                        <p>After applying all above mentioned filters, exact sequence similarity 
+                                        at 3'-end of each potential primer pair hybridization is checked. It considers only 
+                                        those hybridization hits that have last 2 and first 2 bases in left 
+                                        and right primers respectively are exact comlementary to each respective primer and there is no 
+                                        adjacent mismatch in sequence hybridization of next 3 bases in 3'-end is present.</p>
+                                        <p>Next, energy/thermodynamics of each of thus obtained potential
+                                        primer pair hybridizations is calculated for their stable binding. For energy calculation, 
+                                        single internal mismatch parameters(NN-model) are used and "Minimum 3'end Stability" 
+                                        value provided by the user (also used by Primer3 for primer design) is 
+                                        used as energy threshold. Hybridizations that pass these 
+                                        specificity filters are reported as cross-hybridizations for each primer pair designed.</p>
+					<div align="center"><img src="http://primegens.org//images/cross-hbrdn.png" alt="Figure-1" height="250" width="350"/></div>
+					<p>Fundamental restriction for PCR amplification. Of the 4
+					scenarios, (A) alone will produce amplicon, and only if the
+					inter-primer distance is less than maximum amplicon size as determined
+					by the user. </p>					
+			      </div>
+	  </div>
+	  <div id="footer">		
+		  <div class="footer_main">
+				<p>
+					<a href="Copyright.html">Copyright</a> |
+					<a href="Acknowledgement.html">Acknoledgement</a> |
+					<a href="Contact_Us.html">Contact Us</a>  
+				</p>
+		  </div>	
+	 
+		  <div class="bottom_center"><i>Designed by Garima Kushwaha, <br> Digital Biology Laboratory, MU Informatics Institute, University of Missouri - Columbia.</i></div>
+		  
+		  </div>
+</div>	
+</body>
+</html>

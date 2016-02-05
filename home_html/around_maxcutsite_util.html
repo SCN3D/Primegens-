@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>PRIMEGENSw3</title>
+
+<link href="../css/global.css" rel="stylesheet" type="text/css"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript">
+function showElement(layer){
+        var myLayer = document.getElementById(layer);
+                myLayer.style.display="block";
+}
+</script>
+</head>
+<body onload="init();">
+<div id="container">
+      <div id="Logo">
+      	<div id="left-col"><h1>PRIMEGENS-<i>w3</i></h1><span>High-throughput Primer and Probe Design</span></div>
+		<div id="right-col">
+			<div id="title"><span>Digital Biology Laboratory</span><br/><span>University of Missouri - Columbia</span></div>
+			<div id="imgPlcHolder"><img src="http://primegens.org/images/mu_logo.png"/></div>
+		</div>
+      </div>
+ 	  <div id="main-content">
+      			<div id="navigation-panel">
+                                               <p><a href="http://primegens.org/">Home</a> </p>
+                                               <p><a href="#" class="button" onclick="javascript:showElement('hide')">
+                                               <span>Algorithm</span>
+                                               </a></p>
+                                               <div id=hide><ul>
+						<p><li><a href="SSPD.html">SSPD</a></li></p>
+						<p><li><a href="PSPD.html">PSPD</a></li></p>
+						<p><li><a href="FSPD.html">FSPD</a></li></p>
+                                                <p><li><a href="Binding_check.html">Check Binding Specificity</a></li></p>
+                                                <p><li><a href="Probe_Design.html">Probe Design Only</a></li></p>
+                                                </ul></div>
+                                                <p><a href="Implementation.html">Implementation</a></p>
+                                                <p><a href="Database_Support.html">Database Support</a></p>
+                                                <p><a href="References.html">References</a></p>
+                                                <p><a href="PRIMEGENSw3-User-Manual.pdf">Download User Manual</a></p>
+			      </div>
+			      <div id="content">
+                                   <p><strong>Primer Design around maximum cut-site region..</strong><br/></p>
+                                   <p>PRIMEGENS-v2 can also be used to search for regions with the maximum enzyme digestion sites (cut-sites)
+                                   within each query sequence and design primers around these cut-sites. This ensures the presence of cut-sites
+                                   in the PCR product and is very useful in MSP. PRIMEGENS-v2 searches for any of the cut-sites provided
+                                   by the user in the query sequence. From each cut-site, it tries to search for the region with the maximum
+                                   density of such sites in the regions that are determined by the user as another PRIMEGENS-v2 variable
+                                   known as CUT SITE REGION. The region with the maximum cut site density is then considered as the
+                                   region for TARGET REGION variable used by Primer3 to design primers around them. Figure 13 shows
+                                   how PRIMEGENS-v2 locates the maximum cut-site region in the whole query sequence and chooses the
+                                   target region within CUT SITE REGION, as well as how Primer3 designs primers around the target region.</p>
+                                   <div align="center"><img src="http://primegens.org/images/cut_site.png" alt="tss-tool figure" height="66%" width="78%"/></div>
+                                   <p align="center">The PRIMEGENS-v2 algorithm for choosing the maximum cut-site region in query
+                                   sequence for the primer design. It systematically searches for segments including the cut-sites
+                                   and then identifies the regions with the maximum cut-sites for primer design.</p>
+
+
+			      </div>
+	  </div>
+	  <div id="footer">		
+		  <div class="footer_main">
+				<p>
+					<a href="Copyright.html">Copyright</a> |
+					<a href="Acknowledgement.html">Acknoledgement</a> |
+					<a href="Contact%20Us.html">Contact Us</a>  
+				</p>
+		  </div>	
+
+    <div class="bottom_center"><i>Designed by Garima Kushwaha, <br> Digital Biology Laboratory, MU Informatics Institute, University of Missouri - Columbia.</i></div>
+</div>
+</div>	
+</body>
+</html>

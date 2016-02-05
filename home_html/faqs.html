@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>PRIMEGENS</title>
+<link href="http://primegens.org/w3/css/global.css" rel="stylesheet" type="text/css"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+ <script type="text/javascript">
+    function showElement(layer){
+	   var myLayer = document.getElementById(layer);
+       if (myLayer.style.display=="block"){
+           myLayer.style.display="none";}
+	   else{
+           myLayer.style.display="block";}
+   }
+</script>
+
+</head>
+<body onload="init();">
+<div id="container">
+      <div id="Logo">
+      	<div id="left-col"><h1>PRIMEGENS</h1><span>High-throughput Primer and Probe Design</span></div>
+		<div id="right-col">
+			<div id="title"><span>Digital Biology Laboratory</span><br/><span>University of Missouri - Columbia</span></div>
+			<div id="imgPlcHolder"><img src="http://primegens.org/images/mu_logo.png"/></div>
+		</div>
+      </div>
+ 	  <div id="main-content">
+      			<div id="navigation-panel">
+
+						<p><a href="http://primegens.org">Home</a> </p>
+				    	<p><a href="#" class="button" onclick="javascript:showElement('hide')">
+					    <span>Algorithm</span>
+					    </a></p>
+					    <div id="hide"><ul>
+						     <p><a href="SSPD.html">SSPD</a></p>
+						     <p><a href="PSPD.html">PSPD</a></p>
+						     <p><a href="FSPD.html">FSPD</a></p>
+		         			 <p><li><a href="Binding_check.html">Check Binding Specificity</a></li></p>
+		                <p><li><a href="Probe_Design.html">Probe Design Only</a></li></p>
+					    </ul></div>
+						<p><a href="Implementation.html">Implementation</a></p>
+						<p><a href="References.html">References</a></p>
+			   
+						 <p><a href="download.html">Download</a></p>
+						 <p><a href="installation.html">Installation</a></p>
+						 <p><a href="execution.html">Execution</a></p>
+						 <p><a href="faqs.html">FAQS</a></p>
+						
+				</div>
+			      <div id="content">
+					
+				  <H3>Frequently asked questions (FAQ)</H3>
+		          <U1>
+				     <p style="MARGIN-RIGHT: 46px" align=justify><span style="MARGIN-RIGHT: 46px"><strong>Why PRIMEGENSv2 is not running on my computer?</strong></span></p>
+				        <p style="MARGIN-RIGHT: 46px" align=justify><FONT face=Arial><SPAN class=style6>PRIMEGENSv2 program uses system environment variable &quot;FINDSEG_PATH&quot; to execute various module. The value of this environment variable is the absolute path of PRIMEGENS directory including PRIMEGENS for example if PRIMEGENS user has stored this directory in &quot;C:\software\&quot; on windows or &quot;/home/user/software&quot; in linux then the value of environment variable should be &quot;C:\software\PRIMEGENS&quot; or &quot;/home/user/software/PRIMEGENS&quot; for respective platforms. <br></SPAN></FONT></p>     
+		             <p style="MARGIN-RIGHT: 46px" align=justify><strong>How should I select my database and subset file for primer design?</strong></p>
+			            <p style="MARGIN-RIGHT: 46px" align=justify><FONT face=Arial><SPAN>The user has to make sure that all the sequences whose primer need to be designed exist in the database with same name as provided in subset file (if provided by the user). In case subset file is not provided, the software will design primer for all the sequences in the database. </SPAN></FONT></p> 
+				     <p style="MARGIN-RIGHT: 46px" align=justify><span style="MARGIN-RIGHT: 46px"><strong>What is the correct format for database and subset file input to PRIMEGENS?</strong></span></p>
+			            <p style="MARGIN-RIGHT: 46px" align=justify><FONT face=Arial>The correct format for the database input to the software is FASTA format like as shown in the figure below </FONT></p>  
+			            <p style="MARGIN-RIGHT: 46px" align=center><img width="262" height="207" src="http://primegens.org/images/faqs_clip_image001_0009.gif" alt="Text Box: >TC216017   GGCACGAGGAGAACTAAAAGAA  >TC216017  GGCACGAGGAGATGGCTAAGAA  ACGACCATCGTGTGCCACCANA  NGAGGACGGGCATGCTCC        TGGC  >TC216017"></p>
+			           <p style="MARGIN-RIGHT: 46px" align=center>Fig.1. Database input format</p>
+				       <p style="MARGIN-RIGHT: 46px" align=justify>Please note that there should not be any extra line accept name, function and sequence. Also function for any sequence should be present in one append to the name separated by  space. </p>   
+			           <p style="MARGIN-RIGHT: 46px" align=justify>The correct format for the subset file is also an FASTA format accept that it should only contain sequence name ( neither functions nor sequences). Below is a sample format for the subset file input.</p>     
+					   <p style="MARGIN-RIGHT: 46px" align=center><img width="152" height="80" src="http://primegens.org/images/faqs_clip_image001_0008.gif" alt=""></p>
+				       <p style="MARGIN-RIGHT: 46px" align=center>Fig.2. Subset file format </p>     
+		        	   <p style="MARGIN-RIGHT: 46px" align=justify><font face="Arial">As shown in Fig.2. each line should contain name of sequences, whose primer needs to be designed and also exist in the database with same name. </font></p>     
+				     <p style="MARGIN-RIGHT: 46px" align=justify><strong>How should I select my database and subset file for primer design?</strong></p>
+																	            
+				       <p style="MARGIN-RIGHT: 46px" align=justify><FONT face=Arial>The user has to make sure that all the sequences whose primer need to be designed exist in the database with same name as provided in subset file (if provided by the user). In case subset file is not provided, the software will design primer for all the sequences in the database. </FONT></p>    
+			    	 <p style="MARGIN-RIGHT: 46px" align=justify><strong>How long does it take to calculate all the primers?</strong></p>    
+				       <p style="MARGIN-RIGHT: 46px" align=justify><FONT face=Arial><SPAN class=style6>It depends on the number of sequences and the machines used it. Specially the type of database and sequences for primer design affect the running time in square. The main reason behind this is the number of homo logs for any query sequence since it is more complex to design primer for such sequence instead of that for unique sequences. </SPAN></FONT></p>
+				       <p style="MARGIN-RIGHT: 46px" align=justify><FONT face=Arial><SPAN class=style6>For the server, typically it takes about a couple of hours for  6000 genes. The computing time is basically proportional to the number of sequences </SPAN></FONT></p>
+				  <p style="MARGIN-RIGHT: 46px" align=justify></p>
+				  </U1><U1></U1> 
+				  </UL> 			  
+				  
+			      </div>
+	  </div>
+	  <div id="footer">		
+		  <div class="footer_main">
+				<p>
+					<a href="Copyright.html">Copyright</a> |
+					<a href="Acknowledgement.html">Acknoledgement</a> |
+					<a href="Contact_Us.html">Contact Us</a>  
+				</p>
+		  </div>	
+	 
+		  <div class="bottom_center"><i>Designed by Garima Kushwaha, <br> Digital Biology Laboratory, MU Informatics Institute, University of Missouri - Columbia.</i></div>
+		  
+		  </div>
+</div>	
+</body>
+</html>

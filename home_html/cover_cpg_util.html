@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>PRIMEGENSw3</title>
+
+<link href="../css/global.css" rel="stylesheet" type="text/css"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript">
+function showElement(layer){
+        var myLayer = document.getElementById(layer);
+                myLayer.style.display="block";
+}
+</script>
+</head>
+<body onload="init();">
+<div id="container">
+      <div id="Logo">
+        <div id="left-col"><h1>PRIMEGENS-<i>w3</i></h1><span>High-throughput Primer and Probe Design</span></div>
+                <div id="right-col">
+                        <div id="title"><span>Digital Biology Laboratory</span><br/><span>University of Missouri - Columbia</span></div>
+                        <div id="imgPlcHolder"><img src="http://primegens.org/images/mu_logo.png"/></div>
+                </div>
+      </div>
+          <div id="main-content">
+                        <div id="navigation-panel">
+                                               <p><a href="http://primegens.org/">Home</a> </p>
+                                               <p><a href="#" class="button" onclick="javascript:showElement('hide')">
+                                               <span>Algorithm</span>
+                                               </a></p>
+                                               <div id=hide><ul>
+                                                <p><li><a href="SSPD.html">SSPD</a></li></p>
+                                                <p><li><a href="PSPD.html">PSPD</a></li></p>
+                                                <p><li><a href="FSPD.html">FSPD</a></li></p>
+                                                <p><li><a href="Binding_check.html">Check Binding Specificity</a></li></p>
+                                                <p><li><a href="Probe_Design.html">Probe Design Only</a></li></p>
+                                                </ul></div>
+                                                <p><a href="Implementation.html">Implementation</a></p>
+                                                <p><a href="Database_Support.html">Database Support</a></p>
+                                                <p><a href="References.html">References</a></p>
+                                                <p><a href="PRIMEGENSw3-User-Manual.pdf">Download User Manual</a></p>
+                              </div>
+
+			      <div id="content">
+ <p><strong>Primer Design covering CpG Island</strong><br/></p>
+
+<p>Primer design covering CpG Island is one of the unique features of PRIMEGENS-v2, which can be used to
+study methylation patterns of various oncogenes and tumor suppressor genes. This feature designs primers for genes that have CpG islands present in close proximity to their respective TSSs. Primers can be designed
+to amplify genes whose expressions are suspected to be influenced by nearby CpG islands. In this approach,
+locating CpG islands is determined by a PRIMEGENS-v2 variable, VICINITY. PRIMEGENS-v2 looks for
+the presence of CpG islands in the region of VICINITY, in both sides of a genes TSS. It tries to cover either
+the whole or partial CpG islands in the region of the VICINITY value. CpG islands can lie to the left,
+right, or across the TSS. In addition, users can also provide their direction or region of interest to enable
+PRIMEGENS-v2 to look for CpG islands. By default, CpG islands present in any of the three possible
+positions are considered, and the distance between a CpG island and TSS, if found at one or the other side
+of TSS are also reported. Based on this information, PRIMEGENS-v2 extracts the final query sequence
+for the primer design. The length of the query sequence to be used for primer design is also determined
+by PRIMEGENS-v2 variables QLENGTH and MINCOVER (see Section 5.2.2). The FSPD algorithm is
+recommended for this type of primer design due to the long length of CpG islands. Figure 10 shows this
+feature of PRIMEGENS-v2, illustrates a design primer for genes surrounded by CpG islands. Thus far, this
+feature has been used and supported for human genome and their TSS and CpG locations. Other supported
+genomes will be used and tested in the future.
+</p>
+<div align="center"><img src="http://primegens.org/images/CpG-primer1.png" alt="cpg figure" height="66%" width="76%"/></div>
+                     <p align="center">Amplified CpG islands within the vicinity of a genes TSS. (A) shows the presence of
+CpG island at the left side of the TSS (gradient blue) lying inside the region of VICINITY. Here,
+the query sequence has been picked of the length of QLENGTH value covering the MINCOVER
+region at the opposite side of the TSS (right side), the TSS itself, and portion of the CpG on
+the left. (B) shows the presence of CpG island across the TSS (gradient blue). Here, the query
+sequence has been picked of the length of QLENGTH value equally covering both sides of the
+TSS. (C) shows the presence of CpG island at the right side of the TSS (gradient blue) with its
+start position lying inside the region of VICINITY at the right side of the TSS. Here, the query
+sequence has been picked of the length of QLENGTH value covering the MINCOVER region at
+the opposite side of the TSS (left side), the TSS itself, and portion of CpG at the left. </p>
+	
+			      </div>
+	  </div>
+	  <div id="footer">		
+		  <div class="footer_main">
+				<p>
+					<a href="Copyright.html">Copyright</a> |
+					<a href="Acknowledgement.html">Acknoledgement</a> |
+					<a href="Contact%20Us.html">Contact Us</a>  
+				</p>
+		  </div>	
+	 
+
+    <div class="bottom_center"><i>Designed by Garima Kushwaha, <br> Digital Biology Laboratory, MU Informatics Institute, University of Missouri - Columbia.</i></div>
+</div>
+</div>	
+</body>
+</html>
