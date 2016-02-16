@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Algorithm</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/shop-homepage.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+    .leftTitle {float: left;}
+        
+   
+        
+    .RightTitle {float: right;}
+    
+    .middleTitle {float: right;}
+    
+    .wrapper:after {
+              content: "";
+              display: table;
+              clear: both;
+            }
+
+    </style>
+</head>
+
+<body>
+    <div class="container wrapper">
+        <div class="leftTitle">
+            <h1>PRIMEGENS-<i>w3</i></h1>
+            <h3>High-throughput Primer and Probe Design</h3>
+            <hr>
+        </div>
+        <div class="middleTitle">
+            <h3>Digital Biology Laboratory</h3>
+            <h3>University of Missouri - Columbia</h3>
+        </div>
+        <div class="RightTitle">
+            <img src="http://primegens.org//images/mu_logo.png">
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html"><i>PRIMEGENS-w3</i></a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="algorithm.html">Algorithm</a>
+                    </li>
+                    <li>
+                        <a href="implementation.html">Implementation</a>
+                    </li>
+                    <li>
+                        <a href="support.html">Database Support</a>
+                    </li>
+                    <li>
+                        <a href="references.html">References</a>
+                    </li>
+                    <li>
+                        <a href="download.html">Download</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row mainContent">
+
+            <div class="col-md-3">
+                <p class="lead">PRIMEGENS</p>
+                <div class="list-group">
+                    <a href="about.html" class="list-group-item">About</a>
+                    <a href="algorithm.html" class="list-group-item">Algorithm</a>
+                    <a href="implementation.html" class="list-group-item">Implementation</a>
+                    <a href="support.html" class="list-group-item">Database Support</a>
+                    <a href="references.html" class="list-group-item">References</a>
+                    <a href="download.html" class="list-group-item">Download</a>
+                </div>
+            </div>
+
+            <div class="col-md-9">
+
+                <div class="row carousel-holder">
+				
+            <div id="content">
+		<p><strong>SSPD - Sequence Specific Primer Design</strong><br>
+		This algorithm is used to design primers for each of the specific sequences given by the user in the query input file against anyalternate potential hybridization with any of the sequences given in the database input file.</p>
+		<p>In its first step, SSPD design different primers for the query sequence using a third-party program, i.e. Primer3. It uses the stand alone executable of Primer3 to design 100s of primer pairs scattered all over the input query sequence by Primer3 and then retain only unique ones from this set. This step help in optimizing its nnput query sequence. It further selects only few specific primers from the resulting multiple set of primers due to the fact that complete binding between primers and template is not required at the 5'-end and stringency is more critical at 3'-end than at 5'-end of the primer. Based on this criterion, it first selects 15mer oligonucleotides from 3'-end of each primer designed by Primer3 and then retain only unique ones from this set. This step help in optimizing its next step and make PRIMEGENS run faster. </p>
+		<p> Second step of SSPD is to perform gapless alignments of the unique primers with all	the sequences in database file to find all the potential non-specific PCR-products. For this, it uses Megablast for alignment and is optimized for detection of genomic regions which are highly similar to query oligo (15mer) in the database sequences provided. Finally in the end, it selects primers that have single or minimum cross hybridizations possible and give those primers as output.</p>
+		<div align="center"><img src="http://primegens.org/images/SSPD.png" alt="Figure-1" height="450" width="340"/>
+		<p>Above figure shows the flowchart for SSPD algorithm.</p>
+		</div><br>
+		
+		<p><strong>PSPD - Probe Specific Primer Design</strong><br /> 
+		PSPD is one of the PRIMEGENS various algorithms to design primers. It selects the gene-specific fragments (probes) to design primer pairs for their PCR amplification. </p>
+		<p>  The two major computational tasks in this algorithm works in absolutely reverse order from that of SSPD. Here, it first identifies a gene-specific fragment (probe) and then design primers for the target fragment (or probe).</p>
+        <p>  It first carries out the heuristic BLAST search for each of the query sequence against all the sequences in the database file to identify any possible matching sequences. Then, it performs optimal alignment between the query and each of its match or similar sequence using Dynamic Programming technique. Based on the alignment, it will try to find the sequence fragment that does not align with any other sequence and select them as gene-specific fragments. For sequences which are specific, they are used as it is as the gene specific fragments. </p>
+		<p>  In its second task, PRIMEGENS uses Primer3 to design PCR-primers for gene-specific fragments (or probes) of the query sequence found in PSPD's first step instead of the whole query sequence provided. Primer3 gives primers for PCR amplifications based on user-specified parameters (eg. Primer size, melting temperature, GC content, self-complementarity, etc.). </p>
+		<p>  Finally, out of all the primers that Primer3 generates, PRIMEGENS further check for their binding specificity by ruling out incorrect binding pairs with respect to their order and orientation.</p>
+		<div align="center"><img src="http://primegens.org/images/PSPD.png" alt="PSPD figure" height="350" width="410"/></div>
+		<p align="center">Above figure shows the flowchart for PSPD algorithm. </p><br>
+		
+		<p><strong>FSPD Fagment Specific Primer Design </strong><br/></p>
+		<p>Fragment Specific Primer Design is another primer design algorithm used by PRIMEGENS. 
+        This algorithm is used when there is a very long query sequence for which multiple 
+        primers are required for its amplification.</p>
+	    <p>This algorithm first break down the whole query sequence into small overlapping
+        fragments, and then, design primers for each of these fragments. For this, user should 
+        provide the length of each fragment into which the query sequence will be divided 
+        (fragment length) and the distance between two fragments to design associated primers (fragment period).</p>
+		<p>After the fragmentation of query sequence, this algorithm works exactly similar to the SSPD 
+        algorithm to design primers for each of the fragment and give multiple primers for a long query sequence.</p>				 
+        <div align="center"><img src="http://primegens.org/images/FSPD.JPG" alt="FSPD figure" height="440" width="600"/></div>
+        <p align="center">Above figure shows the flowchart for FSPD algorithm. </p><br>
+		
+		<strong> Probe Design only.</strong>
+		<p> Probe design algorithm could be used to find sequence-specific probes,
+		which doesn't show any blast hit against database. Such probe design
+		has been used for targeted sequencing like agilent sure-select
+		technology with next-generation sequencing.</p>
+		<p>Probe design algorithm uses, sliding window protocol to find fragment
+		of user-given length. Also the algorithm could be used to design
+		multiple probes scattered around query sequence to cover whole region.</p>					
+		<p>To design gene specific probes, PRIMEGENSv2 uses sliding window protocol to find fragment 
+        of user-given length by the PRIMEGENSv2 variable PROBE_LENGTH as the window size. This sliding
+        window moves over length of PROBE_PERIOD ('Probe shift' in Figure). It looks for probe in every
+        next genomic region given by the PRIMEGENv2 parameter named as PROBE_REGION ('Inter-probe distance'
+        in Figure). For probe design, user can also provide their preference of maximum and minimum GC
+        content in the probe using PRIMEGENSv2 other variables as MAX_GC and Min_GC and maximum allowable
+        BLAST hit for probes.</p>
+		<div align="center"><img src="http://primegens.org/images/Probe_design_picture.png" alt="Probe Design figure" height="440" width="590"/></div>
+					
+            </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <!-- /.container -->
+
+    <div class="container">
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; 2016</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
